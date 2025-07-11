@@ -1,0 +1,196 @@
+.hero {
+  position: relative;
+  top: 64px;
+}
+
+.hero-wrapper {
+  background-color: darkcyan;
+  width: 1440px;
+  height: 700px;
+  margin: auto;
+  position: relative;
+  /* top: 64px; */
+}
+
+.hero-wrapper-image-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-wrapper-image-wrapper-image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.hero-wrapper-content-wrapper {
+  /* background-color: darkseagreen; */
+  width: 1280px;
+  height: 560px;
+  margin: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hero-wrapper-content-wrapper-description {
+  /* background-color: darkgreen; */
+  width: 50%;
+}
+
+.hero-wrapper-content-wrapper-description-header {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 68px;
+}
+
+.hero-wrapper-content-wrapper-description-button {
+  margin-top: 40px;
+  background-color: var(--essilor-white);
+  color: var(--blue-marine);
+  border: none;
+  border-radius: 25px;
+  padding: 10px 30px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  transition: background-color 0.2s ease-in;
+  cursor: pointer;
+}
+
+.hero-wrapper-content-wrapper-description-button:active {
+  background-color: #c3d3f7;
+}
+
+.hero-wrapper-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: aqua;
+  z-index: 2;
+  background: linear-gradient(90deg, rgb(1, 14, 61) 0%, rgba(87, 199, 133, 0) 50%, rgba(237, 221, 83, 0) 100%);
+}
+
+.hero-wrapper-content-wrapper-carousel {
+  /* background-color: darksalmon; */
+  width: 190px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero-wrapper-content-wrapper-carousel-left {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: transparent;
+  color: var(--essilor-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid transparent;
+  transition: border 0.2s ease-in;
+}
+
+.hero-wrapper-content-wrapper-carousel-left:hover {
+  border: 2px solid var(--essilor-white);
+  cursor: pointer;
+}
+
+.hero-wrapper-content-wrapper-carousel-line-container-line {
+  width: 75px;
+  border: none;
+  height: 1px;
+  background-color: var(--essilor-white);
+}
+
+.hero-wrapper-content-wrapper-carousel-right {
+  width: 50px;
+  height: 50px;
+  border: 2px solid var(--essilor-white);
+  background-color: transparent;
+  color: var(--essilor-white);
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-wrapper-content-wrapper-carousel-right:hover {
+  cursor: pointer;
+}
+
+.hero-nav-arrow {
+  font-family: nunito, Helvetica, sans-serif;
+  font-size: 50px;
+  transform: scaleX(0.45);
+  position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  z-index: 5;
+}
+
+.hero-wrapper-content-wrapper-carousel-left-arrow {
+  border: none;
+  right: 2px;
+  bottom: 2px;
+}
+
+.hero-wrapper-content-wrapper-carousel-right-arrow {
+  left: 2px;
+  bottom: 2px;
+}
+
+.hero-wrapper-content-wrapper-carousel-right-frontcircle {
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: conic-gradient(transparent 0deg 300deg, white 300deg 360deg);
+  z-index: 3;
+  -webkit-mask-image: radial-gradient(circle at center, transparent 62%, black 65% 100%);
+          mask-image: radial-gradient(circle at center, transparent 62%, black 65% 100%);
+}
+
+.hero-wrapper-content-wrapper-carousel-left:active .hero-wrapper-content-wrapper-carousel-left-active-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  scale: 0;
+  background-color: rgba(254, 254, 254, 0.464);
+  animation-name: active-circle-scaling;
+  animation-duration: 0.4s;
+  z-index: 4;
+}
+
+.hero-wrapper-content-wrapper-carousel-right:active .hero-wrapper-content-wrapper-carousel-right-active-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  scale: 0;
+  background-color: rgba(254, 254, 254, 0.464);
+  animation-name: active-circle-scaling;
+  animation-duration: 0.4s;
+  z-index: 4;
+}
+
+@keyframes active-circle-scaling {
+  from {
+    scale: 0;
+  }
+  to {
+    scale: 1;
+  }
+}/*# sourceMappingURL=hero.css.map */
