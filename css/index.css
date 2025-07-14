@@ -12,11 +12,11 @@
 
 @font-face {
   font-family: noto-san;
-  src: url(./assets/fonts/NotoSans-Regular.ttf);
+  src: url("../assets/fonts/NotoSans-Regular.ttf");
 }
 @font-face {
   font-family: nunito;
-  src: url(./assets/fonts/Nunito-Regular.ttf);
+  src: url("../assets/fonts/Nunito-Regular.ttf");
 }
 h1,
 h2,
@@ -201,7 +201,6 @@ a {
 }
 
 .hero-wrapper {
-  background-color: darkcyan;
   width: 1440px;
   height: 700px;
   margin: auto;
@@ -298,6 +297,16 @@ a {
   transition: border 0.2s ease-in;
 }
 
+.hero-wrapper-content-wrapper-carousel-left-disabled {
+  pointer-events: none;
+  border: none;
+  cursor: auto;
+  opacity: 0.2;
+}
+.hero-wrapper-content-wrapper-carousel-left-disabled .hero-nav-arrow {
+  opacity: 0.2;
+}
+
 .hero-wrapper-content-wrapper-carousel-left:hover {
   border: 2px solid var(--essilor-white);
   cursor: pointer;
@@ -322,6 +331,15 @@ a {
   align-items: center;
 }
 
+.hero-wrapper-content-wrapper-carousel-right-disabled {
+  pointer-events: none;
+  cursor: auto;
+  opacity: 0.2;
+}
+.hero-wrapper-content-wrapper-carousel-right-disabled .hero-nav-arrow {
+  opacity: 0.2;
+}
+
 .hero-wrapper-content-wrapper-carousel-right:hover {
   cursor: pointer;
 }
@@ -339,12 +357,12 @@ a {
 
 .hero-wrapper-content-wrapper-carousel-left-arrow {
   border: none;
-  right: 2px;
+  right: 1px;
   bottom: 2px;
 }
 
 .hero-wrapper-content-wrapper-carousel-right-arrow {
-  left: 2px;
+  left: 1px;
   bottom: 2px;
 }
 

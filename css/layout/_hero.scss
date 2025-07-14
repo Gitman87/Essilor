@@ -3,7 +3,7 @@
   top: 64px;
 }
 .hero-wrapper {
-  background-color: darkcyan;
+  // background-color: darkcyan;
   width: 1440px;
   height: 700px;
   margin: auto;
@@ -93,6 +93,15 @@
   border: 1px solid transparent;
   transition: border 0.2s ease-in;
 }
+.hero-wrapper-content-wrapper-carousel-left-disabled {
+  pointer-events: none;
+  border: none;
+  cursor: auto;
+  opacity: 0.2;
+  .hero-nav-arrow {
+    opacity: 0.2;
+  }
+}
 .hero-wrapper-content-wrapper-carousel-left:hover {
   border: 2px solid var(--essilor-white);
   cursor: pointer;
@@ -114,6 +123,14 @@
   justify-content: center;
   align-items: center;
 }
+.hero-wrapper-content-wrapper-carousel-right-disabled {
+  pointer-events: none;
+  cursor: auto;
+  opacity: 0.2;
+  .hero-nav-arrow {
+    opacity: 0.2;
+  }
+}
 .hero-wrapper-content-wrapper-carousel-right:hover {
   cursor: pointer;
 }
@@ -127,11 +144,11 @@
 }
 .hero-wrapper-content-wrapper-carousel-left-arrow {
   border: none;
-  right: 2px;
+  right: 1px;
   bottom: 2px;
 }
 .hero-wrapper-content-wrapper-carousel-right-arrow {
-  left: 2px;
+  left: 1px;
   bottom: 2px;
 }
 .hero-wrapper-content-wrapper-carousel-right-frontcircle {
