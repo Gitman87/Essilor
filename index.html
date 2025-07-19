@@ -15,6 +15,8 @@
       
   </head>
   <body>
+
+
     <header class="header">
       <div class="header-wrapper">
         <div class="header-wrapper-inner">
@@ -145,14 +147,14 @@
               <button class="hero-wrapper-content-wrapper-description-button">Odkryj</button>
             </div>
             <div class="hero-wrapper-content-wrapper-carousel">
-              <button class="hero-wrapper-content-wrapper-carousel-left hero-nav-button">
+              <button onclick="moveSlideLeft()" class="hero-wrapper-content-wrapper-carousel-left hero-wrapper-content-wrapper-carousel-left-disabled hero-nav-button">
                 <div class="hero-wrapper-content-wrapper-carousel-left-arrow hero-nav-arrow "> &lt; </div>  
                 <div class="hero-wrapper-content-wrapper-carousel-left-active-circle"></div>
               </button>
               <div class="hero-wrapper-content-wrapper-carousel-line-container">
                 <hr class="hero-wrapper-content-wrapper-carousel-line-container-line">
               </div>
-              <button class="hero-wrapper-content-wrapper-carousel-right hero-nav-button">
+              <button  onclick="moveSlideRight()" class="hero-wrapper-content-wrapper-carousel-right hero-nav-button">
                 <div class="hero-wrapper-content-wrapper-carousel-right-arrow hero-nav-arrow"> > </div>
                 <div class="hero-wrapper-content-wrapper-carousel-right-frontcircle"></div>
                 <div class="hero-wrapper-content-wrapper-carousel-right-active-circle"></div>
@@ -190,6 +192,8 @@
       </section>
     </main>
     <footer></footer>
+    <!-- <script  type="module" src="./script.mjs"></script> -->
     <script  type="module" src="./script.mjs"></script>
+
   </body>
 </html>

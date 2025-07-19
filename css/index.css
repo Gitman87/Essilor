@@ -303,9 +303,6 @@ a {
   cursor: auto;
   opacity: 0.2;
 }
-.hero-wrapper-content-wrapper-carousel-left-disabled .hero-nav-arrow {
-  opacity: 0.2;
-}
 
 .hero-wrapper-content-wrapper-carousel-left:hover {
   border: 2px solid var(--essilor-white);
@@ -334,9 +331,6 @@ a {
 .hero-wrapper-content-wrapper-carousel-right-disabled {
   pointer-events: none;
   cursor: auto;
-  opacity: 0.2;
-}
-.hero-wrapper-content-wrapper-carousel-right-disabled .hero-nav-arrow {
   opacity: 0.2;
 }
 
@@ -371,7 +365,7 @@ a {
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background: conic-gradient(transparent 0deg 300deg, white 300deg 360deg);
+  background: conic-gradient(transparent 0deg var(--slider-progress-deg), white var(--slider-progress-deg) 360deg);
   z-index: 3;
   -webkit-mask-image: radial-gradient(circle at center, transparent 62%, black 65% 100%);
           mask-image: radial-gradient(circle at center, transparent 62%, black 65% 100%);

@@ -98,9 +98,6 @@
   border: none;
   cursor: auto;
   opacity: 0.2;
-  .hero-nav-arrow {
-    opacity: 0.2;
-  }
 }
 .hero-wrapper-content-wrapper-carousel-left:hover {
   border: 2px solid var(--essilor-white);
@@ -127,9 +124,6 @@
   pointer-events: none;
   cursor: auto;
   opacity: 0.2;
-  .hero-nav-arrow {
-    opacity: 0.2;
-  }
 }
 .hero-wrapper-content-wrapper-carousel-right:hover {
   cursor: pointer;
@@ -156,7 +150,10 @@
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background: conic-gradient(transparent 0deg 300deg, white 300deg 360deg);
+  background: conic-gradient(
+    transparent 0deg var(--slider-progress-deg),
+    white var(--slider-progress-deg) 360deg
+  );
   z-index: 3;
   mask-image: radial-gradient(
     circle at center,

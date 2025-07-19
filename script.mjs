@@ -13,19 +13,13 @@ const heroDescription = document.querySelector(
   ".hero-wrapper-content-wrapper-description-para"
 );
 const heroImage = document.querySelector(".hero-wrapper-image-wrapper-image");
-const leftHeroButtonArrow = document.querySelector(
+const leftHeroButton = document.querySelector(
   ".hero-wrapper-content-wrapper-carousel-left"
 );
-const rightHeroButtonArrow = document.querySelector(
+const rightHeroButton = document.querySelector(
   ".hero-wrapper-content-wrapper-carousel-right"
 );
-const leftHeroNavButton = document.querySelector(
-  ".hero-wrapper-content-wrapper-carousel-left"
-);
-const rightHeroNavButton = document.querySelector(
-  ".hero-wrapper-content-wrapper-carousel-right"
-);
-const cards = [
+const slides = [
   firstCardContent,
   secondCardContent,
   thirdCardContent,
@@ -33,45 +27,62 @@ const cards = [
   fifthCardContent,
   sixthCardContent,
 ];
-// console.log(cards);
-let currentCardIndex = 0;
+let slidePosition = 0;
+let sliderProgressInterval = Math.floor(360 / slides.length);
+let conicProgressBarStartPosition = 360 - sliderProgressInterval;
 
 //functions
+const conicProgressCount = () => {
+  return conicProgressBarStartPosition - sliderProgressInterval * slidePosition;
+};
+document.documentElement.style.setProperty(
+  "--slider-progress-deg",
+  `${conicProgressBarStartPosition}deg`
+);
 
-// leftHeroButtonArrow.addEventListener("click", () => {
-//   changeCardBackward();
-// });
-rightHeroButtonArrow.addEventListener("click", () => {
-  console.log("Current index is: ", currentCardIndex);
-  changeCardForward(
-    heroHeader,
-    heroDescription,
-    heroImage,
-    currentCardIndex,
-    rightHeroNavButton,
-    cards
+const changeContent = () => {
+  heroHeader.textContent = slides[slidePosition][0];
+  heroDescription.textContnet = slides[slidePosition][1];
+  heroImage.src = slides[slidePosition][2];
+};
+const changeConicProgress = () => {
+  document.documentElement.style.setProperty(
+    "--slider-progress-deg",
+    `${conicProgressCount()}deg`
   );
-});
-const changeCardForward = (
-  heroHeader,
-  heroDescription,
-  heroImage,
-  currentIndex,
-  button,
-  cards
-) => {
-  if (currentIndex < cards.length - 1) {
-    currentCardIndex++;
-    heroHeader.textContent = cards[currentIndex][0];
-    heroDescription.textContent = cards[currentIndex][1];
-    heroImage.src = cards[currentIndex][2];
-
-    // change looks
-    // changeProgress();
-  } else {
-    // disable button
-    button.classList.add(
+};
+const moveSlideLeft = () => {
+  if (slidePosition > 0) {
+    slidePosition--;
+    rightHeroButton.classList.remove(
       "hero-wrapper-content-wrapper-carousel-right-disabled"
     );
+    changeContent();
+    changeConicProgress();
+    if (slidePosition == 0) {
+      leftHeroButton.classList.add(
+        "hero-wrapper-content-wrapper-carousel-left-disabled"
+      );
+    }
   }
 };
+const moveSlideRight = () => {
+  if (slidePosition < slides.length - 1) {
+    slidePosition++;
+    leftHeroButton.classList.remove(
+      "hero-wrapper-content-wrapper-carousel-left-disabled"
+    );
+    changeContent();
+    changeConicProgress();
+    if (slidePosition == slides.length - 1) {
+      rightHeroButton.classList.add(
+        "hero-wrapper-content-wrapper-carousel-right-disabled"
+      );
+    }
+  }
+};
+//fixed problem with modules XD
+window.moveSlideLeft = moveSlideLeft;
+window.moveSlideRight = moveSlideRight;
+
+//
