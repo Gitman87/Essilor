@@ -19,6 +19,7 @@ const leftHeroButton = document.querySelector(
 const rightHeroButton = document.querySelector(
   ".hero-wrapper-content-wrapper-carousel-right"
 );
+const heroWrapperList = document.querySelector(".hero-wrapper-list");
 const slides = [
   firstCardContent,
   secondCardContent,
@@ -28,10 +29,17 @@ const slides = [
   sixthCardContent,
 ];
 let slidePosition = 0;
+let slideWidth = 1440;
 let sliderProgressInterval = Math.floor(360 / slides.length);
 let conicProgressBarStartPosition = 360 - sliderProgressInterval;
+let slidesLoaded = [];
 
 //functions
+slides.forEach((slide) => slidesLoaded.push(false));
+slidesLoaded[0] = true;
+slidesLoaded[1] = true;
+console.log("Loaded slides array is ", slidesLoaded);
+console.log("Index of first false is: ", slidesLoaded.indexOf(false));
 const conicProgressCount = () => {
   return conicProgressBarStartPosition - sliderProgressInterval * slidePosition;
 };
@@ -72,7 +80,13 @@ const moveSlideRight = () => {
     leftHeroButton.classList.remove(
       "hero-wrapper-content-wrapper-carousel-left-disabled"
     );
-    changeContent();
+    heroWrapperList.style.marginRight = slideWidth * slidePosition + "px";
+    let indexOfFirstFalse = slidesLoaded.indexOf(false);
+    if (slidePosition == indexOfFirstFalse - 2) {
+      heroWrapperList.appendChild(slides[indexOfFirstFalse]);
+      slidesLoaded[indexOfFirstFalse] = true;
+    }
+    // changeContent();
     changeConicProgress();
     if (slidePosition == slides.length - 1) {
       rightHeroButton.classList.add(
