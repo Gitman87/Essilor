@@ -12,7 +12,7 @@ const heroHeader = document.querySelector(
 const heroDescription = document.querySelector(
   ".hero-wrapper-content-wrapper-description-para"
 );
-const heroImage = document.querySelector(".hero-wrapper-image-wrapper-image");
+const heroImage = document.querySelector(".hero-wrapper-image");
 const leftHeroButton = document.querySelector(
   ".hero-wrapper-content-wrapper-carousel-left"
 );
