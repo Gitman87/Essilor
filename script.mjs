@@ -6,16 +6,6 @@ import {
   fifthCardContent,
   sixthCardContent,
 } from "./hero_cards/hero_cards.mjs";
-const heroHeader = document.querySelector(
-  ".hero-wrapper-content-wrapper-description-header"
-);
-const heroDescription = document.querySelector(
-  ".hero-wrapper-content-wrapper-description-para"
-);
-const heroImage = document.querySelector(".hero-wrapper-image");
-const leftHeroButton = document.querySelector(
-  ".hero-wrapper-content-wrapper-carousel-left"
-);
 
 const heroWrapperList = document.querySelector(".hero-wrapper-list");
 const slides = [
@@ -39,23 +29,28 @@ slidesLoaded[1] = true;
 console.log("Loaded slides array is ", slidesLoaded);
 console.log("Index of first false is: ", slidesLoaded.indexOf(false));
 const conicProgressCount = () => {
-  return conicProgressBarStartPosition - sliderProgressInterval * slidePosition;
+  return (
+    conicProgressBarStartPosition -
+    sliderProgressInterval * Math.abs(slidePosition)
+  );
 };
-
-document.documentElement.style.setProperty(
-  "--slider-progress-deg",
-  `${conicProgressBarStartPosition}deg`
-);
 
 const changeConicProgress = () => {
   document.documentElement.style.setProperty(
     "--slider-progress-deg",
     `${conicProgressCount()}deg`
   );
+  const conicProgressBars = document.querySelectorAll(
+    ".hero-wrapper-content-wrapper-carousel-right-frontcircle"
+  );
+  conicProgressBars.forEach((bar) => {
+    console.log("Calculated coonic added");
+    bar.classList.add(
+      "hero-wrapper-content-wrapper-carousel-right-frontcircle-calculated"
+    );
+  });
 };
 const moveSlideLeft = () => {
-  console.log("conic progress count is: ", conicProgressCount());
-
   if (Math.abs(slidePosition) > 0) {
     slidePosition++;
     const rightHeroButtons = document.querySelectorAll(
@@ -68,11 +63,7 @@ const moveSlideLeft = () => {
     });
     heroWrapperList.style.marginLeft = slideWidth * slidePosition + "px";
     let indexOfFirstFalse = slidesLoaded.indexOf(false);
-    console.log(
-      `slide position is ${Math.abs(
-        slidePosition
-      )} and indexOfFirstFalse is ${indexOfFirstFalse}`
-    );
+
     if (Math.abs(slidePosition) == indexOfFirstFalse - 1) {
       const tempDiv = document.createElement("div");
       tempDiv.innerHTML = slides[indexOfFirstFalse];
@@ -81,13 +72,12 @@ const moveSlideLeft = () => {
       slidesLoaded[indexOfFirstFalse] = true;
     }
     // changeContent();
+    document.documentElement.style.setProperty(
+      "--slider-progress-deg",
+      `${conicProgressCount()}deg`
+    );
     changeConicProgress();
 
-    console.log(
-      `slidePOsition is ${
-        Math.abs(slidePosition) - 1
-      } and slides length -1 is ${slides.length - 2}`
-    );
     if (Math.abs(slidePosition) == 0) {
       const leftHeroButtons = document.querySelectorAll(
         ".hero-wrapper-content-wrapper-carousel-left"
@@ -127,13 +117,12 @@ const moveSlideRight = () => {
       slidesLoaded[indexOfFirstFalse] = true;
     }
     // changeContent();
+    document.documentElement.style.setProperty(
+      "--slider-progress-deg",
+      `${conicProgressCount()}deg`
+    );
     changeConicProgress();
 
-    console.log(
-      `slidePOsition is ${
-        Math.abs(slidePosition) - 1
-      } and slides length -1 is ${slides.length - 2}`
-    );
     if (Math.abs(slidePosition) - 1 == slides.length - 2) {
       const rightHeroButtons = document.querySelectorAll(
         ".hero-wrapper-content-wrapper-carousel-right"
