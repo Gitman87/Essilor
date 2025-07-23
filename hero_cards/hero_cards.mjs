@@ -58,6 +58,7 @@ const secondCardContent = `<li class="hero-wrapper-li">
                   <div class="hero-wrapper-content-wrapper-carousel-right-active-circle"></div>
                 </button>
               </div>
+              </div>
             
           </li>`;
 const thirdCardContent = `<li class="hero-wrapper-li">
@@ -88,6 +89,7 @@ const thirdCardContent = `<li class="hero-wrapper-li">
                   <div class="hero-wrapper-content-wrapper-carousel-right-frontcircle"></div>
                   <div class="hero-wrapper-content-wrapper-carousel-right-active-circle"></div>
                 </button>
+              </div>
               </div>
             
           </li>`;
@@ -120,6 +122,7 @@ const fourthCardContent = `<li class="hero-wrapper-li">
                   <div class="hero-wrapper-content-wrapper-carousel-right-active-circle"></div>
                 </button>
               </div>
+              </div>
             
           </li>`;
 const fifthCardContent = `<li class="hero-wrapper-li">
@@ -151,6 +154,7 @@ const fifthCardContent = `<li class="hero-wrapper-li">
                   <div class="hero-wrapper-content-wrapper-carousel-right-active-circle"></div>
                 </button>
               </div>
+              </div>
             
           </li>`;
 const sixthCardContent = `<li class="hero-wrapper-li">
@@ -181,6 +185,7 @@ const sixthCardContent = `<li class="hero-wrapper-li">
                   <div class="hero-wrapper-content-wrapper-carousel-right-frontcircle"></div>
                   <div class="hero-wrapper-content-wrapper-carousel-right-active-circle"></div>
                 </button>
+              </div>
               </div>
             
           </li>`;

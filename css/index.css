@@ -204,6 +204,7 @@ a {
   width: 1440px;
   height: 700px;
   margin: auto;
+  list-style: none;
   position: relative;
   overflow: hidden;
   /* top: 64px; */
@@ -216,15 +217,16 @@ a {
   height: fit-content;
   margin: 0;
   padding: 0;
+  list-style: none;
   display: flex;
   flex-wrap: nowrap;
-  position: relative;
-  /* top: 64px; */
 }
 
-.hero-wrapper-li {
+.hero-wrapper-list li {
   width: 1440px;
   height: 700px;
+  display: flex;
+  flex-shrink: 0;
 }
 
 .hero-wrapper-image {
@@ -235,13 +237,9 @@ a {
 }
 
 .hero-wrapper-content-wrapper {
-  /* background-color: darkseagreen; */
   width: 1280px;
-  height: 560px;
-  margin: auto;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  height: 640px;
+  padding: 70px 80px;
   position: absolute;
   z-index: 3;
   display: flex;
@@ -285,7 +283,6 @@ a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: aqua;
   z-index: 2;
   background: linear-gradient(90deg, rgb(1, 14, 61) 0%, rgba(87, 199, 133, 0) 50%, rgba(237, 221, 83, 0) 100%);
 }
